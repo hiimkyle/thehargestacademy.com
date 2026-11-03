@@ -89,7 +89,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;op
 
 .seal{position:relative;width:min(440px,100%);aspect-ratio:1;margin-left:auto;opacity:0;animation:fade 1.6s .4s forwards}
 .seal .ring{position:absolute;inset:0;animation:spin 40s linear infinite}
-.seal .ring text{font-family:var(--sans);font-size:13.2px;letter-spacing:.42em;fill:var(--gold);text-transform:uppercase;font-weight:500}
+.seal .ring text{font-family:var(--sans);font-size:12.6px;letter-spacing:.3em;fill:var(--gold);text-transform:uppercase;font-weight:500}
 .seal .halo{position:absolute;inset:13%;border-radius:50%;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%, rgba(220,171,102,.12), rgba(11,10,9,0) 70%)}
 .seal .halo::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px dashed rgba(220,171,102,.18)}
 .seal img{position:absolute;inset:22%;width:56%;height:56%;object-fit:contain;filter:drop-shadow(0 0 30px rgba(220,171,102,.25))}
@@ -351,7 +351,8 @@ footer .f-brand small{display:block;font-family:var(--sans);font-size:11px;lette
     <div class="seal" aria-hidden="true">
       <svg class="ring" viewBox="0 0 400 400">
         <defs><path id="circ" d="M200,200 m-178,0 a178,178 0 1,1 356,0 a178,178 0 1,1 -356,0"/></defs>
-        <text><textPath href="#circ">Privates ✦ Cleaning ✦ Choreography ✦ Music Cutting ✦ Middle Tennessee ✦</textPath></text>
+        <!-- textLength = circumference (2π·178 ≈ 1118) so the ring closes evenly -->
+        <text><textPath href="#circ" textLength="1112" lengthAdjust="spacing">Technique ✦ Privates ✦ Cleaning ✦ Choreography ✦ Music Cutting ✦ Middle Tennessee ✦</textPath></text>
       </svg>
       <div class="halo"></div>
       <img src="assets/logo-white.png" alt="">
