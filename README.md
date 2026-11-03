@@ -12,12 +12,11 @@ Run any static server from the repo root, for example:
 python3 -m http.server 4400
 ```
 
-## Going live
+## Domain
 
-The site currently blocks search engines because it's a preview. Before pointing the domain here:
+Live at https://www.thehargestacademy.com (the `CNAME` file). The bare domain redirects to `www`.
 
-1. Remove the `robots` meta tag in `index.html` and delete `robots.txt`.
-2. Set the custom domain in the repo's Pages settings (adds a `CNAME` file).
-3. Update DNS: GitHub's Pages A records for the bare domain, and a `www` CNAME to `hiimkyle.github.io`. Leave the email (MX/SPF/DKIM) records alone.
+- **thehargestacademy.com**: DNS at DreamHost, set to DNS Only. The bare domain has GitHub's four Pages A records (`185.199.108–111.153`) and `www` is a CNAME to `hiimkyle.github.io`. The mailboxes are at DreamHost, so leave the `mail`, `webmail`, `mailboxes`, MX, SPF and DKIM records alone.
+- **hargestacademy.com**: DNS at GoDaddy, which forwards it to thehargestacademy.com.
 
 Keep the studio's street address off the site. Copy says "minutes from downtown Franklin."
