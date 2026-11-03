@@ -68,7 +68,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;op
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;
   background:radial-gradient(60% 55% at 72% 45%, rgba(220,171,102,.16), transparent 70%),
              radial-gradient(40% 40% at 15% 85%, rgba(236,138,143,.08), transparent 70%)}
-.ribbons{position:absolute;inset:0;z-index:-1;width:100%;height:100%}
+/* ribbons fade out over the text column so they never run behind copy */
+.ribbons{position:absolute;inset:0;z-index:-1;width:100%;height:100%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,transparent 44%,#000 64%);
+          mask-image:linear-gradient(90deg,transparent 0,transparent 44%,#000 64%)}
 .ribbons path{fill:none;stroke-linecap:round}
 .ribbons .r1{stroke:url(#gGold);stroke-width:1.6;stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 4.5s cubic-bezier(.6,.1,.2,1) .2s forwards}
 .ribbons .r2{stroke:url(#gGold);stroke-width:.8;opacity:.6;stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 5.5s cubic-bezier(.6,.1,.2,1) .6s forwards}
@@ -252,6 +255,9 @@ footer .f-brand small{display:block;font-family:var(--sans);font-size:11px;lette
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr}
   .seal{width:min(320px,80%);margin:10px auto 0;order:-1}
+  /* single column: keep the ribbons up around the seal, gone before the headline */
+  .ribbons{-webkit-mask-image:linear-gradient(180deg,#000 0,#000 22%,transparent 36%);
+                   mask-image:linear-gradient(180deg,#000 0,#000 22%,transparent 36%)}
   .svc{grid-template-columns:1fr;gap:18px}
   .svc .num{padding-top:0;display:flex;gap:16px;align-items:baseline}
   .svc .num small{margin-top:0}
