@@ -17,6 +17,7 @@ python3 -m http.server 4400
 Live at https://www.thehargestacademy.com (the `CNAME` file). The bare domain redirects to `www`.
 
 - **thehargestacademy.com**: DNS at DreamHost, set to DNS Only. The bare domain has GitHub's four Pages A records (`185.199.108–111.153`) and `www` is a CNAME to `hiimkyle.github.io`. The mailboxes are at DreamHost, so leave the `mail`, `webmail`, `mailboxes`, MX, SPF and DKIM records alone.
+- **Verified domain**: the TXT record `_github-pages-challenge-hiimkyle` proves the domain belongs to the hiimkyle GitHub account, so no other account can claim it. Leave it in place. Both domains are registered at GoDaddy and renew on March 20, 2027.
 - **hargestacademy.com**: DNS at GoDaddy, which forwards it to thehargestacademy.com.
 
 Keep the studio's street address off the site. Copy says "minutes from downtown Franklin."
